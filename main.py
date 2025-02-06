@@ -28,7 +28,8 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # Load models
 face_recognition_model = InceptionResnetV1(pretrained='vggface2').eval()
-mtcnn = MTCNN(keep_all=True, device='cuda' if torch.cuda.is_available() else 'cpu')
+mtcnn = MTCNN(keep_all=True, device='cpu')
+
 
 # FastAPI instance
 app = FastAPI()
